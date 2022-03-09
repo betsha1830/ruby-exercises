@@ -1,9 +1,7 @@
 def nil_array(number)
   # return an array containing `nil` the given number of times
 
-  arr = Array.new(number)
-
-  return arr
+  return Array.new(number)
 
 end
 
