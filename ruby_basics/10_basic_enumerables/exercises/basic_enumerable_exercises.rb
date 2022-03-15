@@ -11,7 +11,8 @@ def display_guess_order(guesses)
   # use puts to output each list item "Guess #<number> is <item>" to console
   # hint: the number should start with 1
 
-  guesses.each_with_index() { |guess, index| puts "Guess \##{index} is #{guess}" }
+  hash = Hash.new
+  guesses.each_with_index { |value, index| puts 'Guess #' + (index+1).to_s + ' is ' + value.to_s}
 
 end
 
@@ -36,16 +37,9 @@ def find_word_lengths(word_list)
   # return a hash with each word as the key and its length as the value
   # hint: look at the documentation and review the reduce examples in basic enumerable lesson
 
-  reduced = word_list.reduce(Hash.new(0)) do |num, animal| 
-    num[animal] += 1
-    animal
-    
+  word_list.reduce({}) do |num, word| 
+    num[word] = word.length
+    num
   end
 
-  puts reduced
-
 end
-
-array = ["cat", "dog"]
-
-find_word_lengths array
